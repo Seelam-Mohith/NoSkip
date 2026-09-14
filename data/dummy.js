@@ -9,6 +9,8 @@ export const currentUser = {
     done: 4,
     target: 5,
   },
+  // null means the user is not in a squad yet.
+  squad: null,
 };
 
 export const motivationQuote = {
