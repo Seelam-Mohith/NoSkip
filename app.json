@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "scheme": "noskip",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/noskip_icon.png",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#0B0B0F",
     "ios": {
