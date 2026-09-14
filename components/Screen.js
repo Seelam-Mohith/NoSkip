@@ -2,12 +2,14 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import colors from '../constants/colors';
+import AnimatedBackground from './AnimatedBackground';
 
 // Reusable screen wrapper: handles safe area, dark background and scrolling.
 export default function Screen({ children, scroll = true, contentContainerStyle }) {
   if (scroll) {
     return (
       <SafeAreaView style={styles.safe} edges={['top']}>
+        <AnimatedBackground />
         <ScrollView
           style={styles.flex}
           contentContainerStyle={[styles.content, contentContainerStyle]}
@@ -21,6 +23,7 @@ export default function Screen({ children, scroll = true, contentContainerStyle 
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
+      <AnimatedBackground />
       <View style={[styles.flex, styles.content, contentContainerStyle]}>{children}</View>
     </SafeAreaView>
   );
@@ -37,6 +40,5 @@ const styles = StyleSheet.create({
   content: {
     paddingHorizontal: 20,
     paddingBottom: 32,
-    backgroundColor: colors.background,
   },
 });
