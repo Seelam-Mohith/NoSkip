@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 import colors from '../constants/colors';
 
@@ -10,10 +10,11 @@ export default function StreakCard({ days }) {
       <View style={styles.iconWrap}>
         <Ionicons name="flame" size={28} color={colors.streak} />
       </View>
-      <View>
+      <View style={styles.textWrap}>
         <Text style={styles.label}>Current Streak</Text>
         <Text style={styles.value}>{days} days</Text>
       </View>
+      <Image source={require('../assets/Panda_1H.png')} style={styles.panda} />
     </View>
   );
 }
@@ -37,6 +38,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginRight: 16,
   },
+  textWrap: {
+    flex: 1,
+  },
   label: {
     color: colors.textSecondary,
     fontSize: 13,
@@ -48,5 +52,10 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: '800',
     letterSpacing: 0.5,
+  },
+  panda: {
+    width: 80,
+    height: 80,
+    resizeMode: 'contain',
   },
 });
