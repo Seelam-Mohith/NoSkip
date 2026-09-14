@@ -1,17 +1,18 @@
+import { Ionicons } from '@expo/vector-icons';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
 
 import colors from '../constants/colors';
 import { motivationLines } from '../data/dummy';
 
-// Highlights the user's current gym streak with a 3D flame emoji, a panda and a quote bubble.
+// Highlights the user's current gym streak with a flame icon, a panda and a quote bubble.
 export default function StreakCard({ days }) {
   const [quote] = useState(() => motivationLines[Math.floor(Math.random() * motivationLines.length)]);
 
   return (
     <View style={styles.card}>
       <View style={styles.left}>
-        <Text style={styles.fire}>🔥</Text>
+        <Ionicons name="flame" size={60} color={colors.primary} style={styles.fire} />
         <View style={styles.textBlock}>
           <Text style={styles.value}>{days} days</Text>
           <Text style={styles.label}>Current streak</Text>
@@ -47,12 +48,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignSelf: 'stretch',
   },
-  fire: {
-    fontSize: 56,
-    textShadowColor: 'rgba(255, 159, 10, 0.35)',
-    textShadowOffset: { width: 0, height: 0 },
-    textShadowRadius: 18,
-    marginBottom: 14,
+fire: {
+    marginBottom: 10,
+    marginLeft: 35,
+    marginTop: 15,
+    alignSelf: 'flex-start',
   },
   textBlock: {
     alignItems: 'flex-start',
