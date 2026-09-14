@@ -1,22 +1,21 @@
-import { Ionicons } from '@expo/vector-icons';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
 
 import colors from '../constants/colors';
 import { motivationLines } from '../data/dummy';
 
-// Highlights the user's current gym streak with a flame icon, a panda and a quote bubble.
+// Highlights the user's current gym streak with a 3D flame emoji, a panda and a quote bubble.
 export default function StreakCard({ days }) {
   const [quote] = useState(() => motivationLines[Math.floor(Math.random() * motivationLines.length)]);
 
   return (
     <View style={styles.card}>
       <View style={styles.left}>
-        <View style={styles.iconWrap}>
-          <Ionicons name="flame" size={30} color={colors.streak} />
+        <Text style={styles.fire}>🔥</Text>
+        <View style={styles.textBlock}>
+          <Text style={styles.value}>{days} days</Text>
+          <Text style={styles.label}>Current streak</Text>
         </View>
-        <Text style={styles.value}>{days} days</Text>
-        <Text style={styles.label}>Current streak</Text>
       </View>
       <View style={styles.pandaWrap}>
         <View style={styles.bubble}>
@@ -45,20 +44,22 @@ const styles = StyleSheet.create({
     minHeight: 220,
   },
   left: {
-    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    alignSelf: 'stretch',
   },
-  iconWrap: {
-    width: 56,
-    height: 56,
-    borderRadius: 16,
-    backgroundColor: 'rgba(255, 159, 10, 0.12)',
-    alignItems: 'center',
-    justifyContent: 'center',
+  fire: {
+    fontSize: 56,
+    textShadowColor: 'rgba(255, 159, 10, 0.35)',
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 18,
     marginBottom: 14,
+  },
+  textBlock: {
+    alignItems: 'flex-start',
   },
   value: {
     color: colors.text,
-    fontSize: 32,
+    fontSize: 40,
     fontWeight: '800',
     letterSpacing: 0.5,
   },
