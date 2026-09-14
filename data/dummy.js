@@ -18,6 +18,25 @@ export const motivationQuote = {
   author: 'NoSkip',
 };
 
+// Short phrases shown in the streak card bubble (picked at random per mount).
+export const motivationLines = [
+  'Keep going.',
+  'You’ve got this.',
+  'One step at a time.',
+  'Never skip progress.',
+  'Be stronger than excuses.',
+  'Start. Don’t overthink.',
+  'Progress, not perfection.',
+  'Make yourself proud.',
+  'Stay consistent.',
+  'No limits.',
+  'Trust the process.',
+  'Rise and grind.',
+  'Do it anyway.',
+  'Small steps. Big results.',
+  'Your future is watching.',
+];
+
 export const friendActivity = [
   { id: 1, name: 'Jordan', streakDays: 21, lastCheckIn: '2h ago' },
   { id: 2, name: 'Taylor', streakDays: 8, lastCheckIn: 'Yesterday' },
