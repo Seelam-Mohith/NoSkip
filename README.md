@@ -51,7 +51,7 @@ data/         Placeholder data
 assets/       App icons and images
 ```
 
-## Scripts
+## Scripts to Run application
 
 | Command       | Description                     |
 | ------------- | ------------------------------- |
@@ -59,3 +59,9 @@ assets/       App icons and images
 | `npm run android` | Start and open on Android    |
 | `npm run ios` | Start and open on iOS            |
 | `npm run web` | Start and open in the browser    |
+
+## Steps to Run
+1. Download Expo Go App
+2. Run the application using `npm start`
+3. Scan QR code using Expo Go App
+4. Application Runs
